@@ -1,9 +1,10 @@
 import Image from "next/image";
 import { DATA } from "@/data";
+import Container from "@/components/container";
 
 export default function OurPortfolio() {
   return (
-    <section className="mx-auto flex w-full flex-col gap-12 px-6 py-18 sm:px-8 lg:px-28 bg-[#153147]">
+    <Container className="gap-12 bg-[#153147]">
       <h1 className="font-orbitron text-5xl font-semibold text-white">
         {DATA.portfolio.title}
       </h1>
@@ -33,6 +34,6 @@ export default function OurPortfolio() {
           </a>
         ))}
       </div>
-    </section>
+    </Container>
   );
 }

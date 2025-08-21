@@ -13,7 +13,8 @@ const Container = ({
     <section
       id={id}
       className={cn(
-        `mx-auto flex w-full flex-col gap-4 px-6 py-10 sm:px-8 lg:px-28`,
+        `mx-auto flex w-full flex-col gap-4 px-6 sm:px-8 lg:px-28 `,
+        id === "service" ? "py-40" : "py-10 lg:py-20",
         className
       )}
     >
