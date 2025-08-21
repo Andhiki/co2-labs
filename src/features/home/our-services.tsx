@@ -29,7 +29,7 @@ export default function OurServices() {
                 {service.description}
               </span>
               <a
-                href={service.href}
+                href={`/service/${service.href}`}
                 className="font-generalsans font-semibold text-base hover:text-blue-900 underline text-black"
               >
                 View More

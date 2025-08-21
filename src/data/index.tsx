@@ -1,14 +1,113 @@
 export const DATA = {
+  nav: {
+    logo: "/icon.png",
+    cta: {
+      text: "Get Started Today!",
+      url: "#contact",
+    },
+    links: [
+      {
+        label: "Our Services",
+        type: "dropdown",
+        items: [
+          {
+            title: "Website Maintenance",
+            desc: "Keep your website running smoothly and securely",
+            url: "/service/web-main",
+            iconBg: "bg-red-100",
+            icon: "web-maintenance", // nanti kita handle di komponen
+          },
+          {
+            title: "Website & App Development",
+            desc: "Transform your online presence with our custom platform design solutions.",
+            url: "/service/web-dev",
+            iconBg: "bg-yellow-50",
+            icon: "web-dev",
+          },
+          {
+            title: "IT Support",
+            desc: "Experience peace of mind with our reliable IT support services.",
+            url: "/service/it-support",
+            iconBg: "bg-green-50",
+            icon: "it-support",
+          },
+          {
+            title: "3rd Party AI Solution",
+            desc: "Leverage our expertise to find the best third-party services for your business.",
+            url: "/service/ai-solution",
+            iconBg: "bg-purple-50",
+            icon: "ai-solution",
+          },
+        ],
+      },
+      { label: "About Us", url: "#about" },
+      { label: "Portfolio", url: "#portfolio" },
+      { label: "Contact", url: "#contact" },
+    ],
+  },
   hero: {
-    title: "Where Code Meets Creativity",
+    title: ["Where Code Meets", "Creativity"],
+    highlight: true,
     description:
       "Harnessing the power of our Coding Collective to build solutions for your business needs.",
-    button: "Get a free consult",
-    image: "/images/hero.jpg",
+    button: {
+      text: "Get a free consult",
+      url: "#contact",
+    },
+    image: "/home/heroimg.png",
+    backdrop: "/home/backdrop.png",
+  },
+  methodology: {
+    title: "ACE",
+    description: "Methodology for Strategic Consulting",
+    steps: [
+      {
+        title: "Assessment",
+        subtitle: "& Insight Gathering",
+        description:
+          "Our process begins with an initial consultation to gather insights into your business needs and challenges. We work closely with your team to understand your objectives and gather all necessary information.",
+        list: [
+          "Initial consultation meetings",
+          "Gathering business and technical requirements",
+          "Conducting stakeholder interviews",
+          "Understanding long-term business goals",
+        ],
+      },
+      {
+        title: "Customization",
+        subtitle: "& Strategic Planning",
+        description:
+          "We then develop a strategic plan and design tailored solutions that address your specific needs. This involves detailed planning, resource allocation, and design of bespoke solutions that align with your goals.",
+        list: [
+          "Strategic planning sessions",
+          "Solution design and prototyping",
+          "Resource and timeline planning",
+          "Risk assessment and mitigation planning",
+        ],
+      },
+      {
+        title: "Execution",
+        subtitle: "& Lifecycle Management",
+        description:
+          "We execute the strategic plan and manage the entire solution lifecycle, from implementation to optimization. This ensures the solutions are effectively integrated and continuously deliver value.",
+        list: [
+          "Implementation of the strategic plan",
+          "Solution deployment and integration",
+          "Lifecycle management and support",
+          "Continuous performance evaluation and optimization",
+        ],
+      },
+    ],
+  },
+  about: {
+    title: "About Us",
+    description:
+      "At CO2 Labs, we strive to provide simple yet powerful software solutions and expert consultation to help your business thrive in the digital world.",
+    image: "/home/about-img.png",
   },
   services: [
     {
-      href: "/services/web-main",
+      href: "web-main",
       icon: (
         <svg
           width="31"
@@ -61,7 +160,7 @@ export const DATA = {
       slugCtaImage: "/images/hero.jpg",
     },
     {
-      href: "/services/web-dev",
+      href: "web-dev",
       icon: (
         <svg
           width="35"
@@ -119,7 +218,7 @@ export const DATA = {
       slugCtaImage: "/images/hero.jpg",
     },
     {
-      href: "/services/it-support",
+      href: "it-support",
       icon: (
         <svg
           width="38"
@@ -172,7 +271,7 @@ export const DATA = {
       slugCtaImage: "/images/hero.jpg",
     },
     {
-      href: "/services/ai-solution",
+      href: "ai-solution",
       icon: (
         <svg
           width="29"
@@ -291,6 +390,45 @@ export const DATA = {
       },
     ],
   },
+  contact: {
+    title: "Contact Us",
+    socials: [
+      {
+        type: "map",
+        url: "https://maps.app.goo.gl/sXvWLYMD6nfN7pK3A",
+        icon: "/icons/map.svg", // bisa pakai inline SVG juga
+      },
+      {
+        type: "email",
+        url: "mailto:info@co2labs.com",
+        icon: "/icons/mail.svg",
+      },
+      {
+        type: "phone",
+        url: "#", // nanti bisa pakai tel:...
+        icon: "/icons/phone.svg",
+      },
+    ],
+    form: {
+      title: "Hi there, how can we help?",
+      fields: [
+        { type: "text", placeholder: "Your Name", required: true },
+        { type: "email", placeholder: "Yourmail@example.com", required: true },
+        { type: "textarea", placeholder: "Ask Our About Services" },
+      ],
+      referralTitle: "Where Did You Hear About Us?",
+      referralOptions: [
+        "Linkedin",
+        "Instagram",
+        "Job Ads",
+        "Events and Seminars",
+        "Other",
+      ],
+      button: "Send",
+    },
+    mapEmbed:
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1882.4776136128512!2d103.8008668418283!3d1.274634948208806!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da1b27c7a1b85f%3A0xd6085c5205635a1c!2sCoding%20Collective!5e0!3m2!1sen!2sen!4v1721874615960!5m2!1sen!2sen&hl=en",
+  },
   faq: {
     title: "Frequently Asked Questions",
     questions: [
@@ -379,5 +517,33 @@ export const DATA = {
         { title: "Terms & Policy", href: "/terms-policy" },
       ],
     },
+  },
+  notFound: {
+    title: "Something’s missing.",
+    code: "404",
+    description:
+      "Sorry, we can't find that page. You'll find lots to explore on the home page.",
+    cta: {
+      text: "Bring me back",
+      url: "/",
+      icon: "arrow-left",
+    },
+    contacts: [
+      {
+        label: "@co2labs",
+        url: "https://instagram.com/co2labs",
+        icon: "bxl-instagram-alt ",
+      },
+      {
+        label: "support@co2labs.com",
+        url: "mailto:support@co2labs.com",
+        icon: "bxl-gmail",
+      },
+      {
+        label: "081-123-456",
+        url: "tel:081123456",
+        icon: "bxs-phone",
+      },
+    ],
   },
 };

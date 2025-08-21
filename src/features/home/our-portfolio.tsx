@@ -4,7 +4,7 @@ import Container from "@/components/container";
 
 export default function OurPortfolio() {
   return (
-    <Container className="gap-12 bg-[#153147]">
+    <Container className="gap-12 bg-[#153147]" id="portfolio">
       <h1 className="font-orbitron text-5xl font-semibold text-white">
         {DATA.portfolio.title}
       </h1>

@@ -5,7 +5,7 @@ import Container from "@/components/container";
 
 export default function OurTeam() {
   return (
-    <Container className="flex flex-col justify-center" id="team">
+    <Container className="flex flex-col justify-center bg-[#f8f8f7]" id="team">
       {/* Title */}
       <div className="flex justify-between lg:mb-32 mb-20 lg:mx-0 mx-10">
         <h1 className="text-5xl font-semibold font-orbitron">

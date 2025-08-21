@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import { body, orbitron } from "@/utils/fonts";
+import AnimationProvider from "@/utils/animation-provider";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -23,11 +24,13 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${body.className} bg-background text-foreground ${orbitron.variable} antialiased`}
+        className={`${body.className} bg-[#f8f8f7] text-foreground ${orbitron.variable} antialiased`}
       >
-        <Navbar />
-        {children}
-        <Footer />
+        <AnimationProvider>
+          <Navbar />
+          {children}
+          <Footer />
+        </AnimationProvider>
       </body>
     </html>
   );
