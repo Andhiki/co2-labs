@@ -14,7 +14,7 @@ export default function NotFound() {
         <Image
           src={DATA.nav.logo}
           alt="brand-logo"
-          className="w-18 invert"
+          className="w-20 invert"
           width={100}
           height={100}
         />
@@ -23,7 +23,7 @@ export default function NotFound() {
       {/* Title + Code */}
       <h4 className="font-semibold text-2xl">{nf.title}</h4>
       <h1 className="font-semibold text-9xl text-[#153147]">{nf.code}</h1>
-      <h6 className="text-gray-400 mx-5 text-lg font-medium">
+      <h6 className="text-gray-400 mx-5 text-xl font-medium">
         {nf.description}
       </h6>
 
@@ -40,7 +40,7 @@ export default function NotFound() {
       </Link>
 
       {/* Contacts */}
-      <div className="flex flex-wrap justify-center gap-5">
+      <div className="flex flex-wrap justify-center gap-5 mt-1">
         {nf.contacts.map((contact, i) => (
           <Link
             key={i}
