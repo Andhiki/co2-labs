@@ -15,10 +15,10 @@ export const generateStaticParams = () => {
 export default function ServiceDetailPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
   const service = DATA.services.find(
-    (service: Service) => service.href === params.slug
+    async (service: Service) => service.href === (await params).slug
   );
 
   return (
