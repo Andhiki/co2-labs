@@ -1,16 +1,13 @@
 "use client";
 
 import { useEffect } from "react";
-import { usePathname } from "next/navigation";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
 const AnimationProvider = ({ children }: { children: React.ReactNode }) => {
-  const pathname = usePathname();
-
   useEffect(() => {
     AOS.init({
-      once: false,
+      once: true,
       duration: 700,
       easing: "ease-out-cubic",
     });
@@ -27,10 +24,6 @@ const AnimationProvider = ({ children }: { children: React.ReactNode }) => {
       }
     };
   }, []);
-
-  useEffect(() => {
-    AOS.refreshHard();
-  }, [pathname]);
 
   return <>{children}</>;
 };
