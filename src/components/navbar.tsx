@@ -1,22 +1,38 @@
+"use client";
+
 import { DATA } from "@/data";
 import Link from "next/link";
 import { buttonVariants } from "./ui/button";
 import { cn } from "@/utils/cn";
 import Image from "next/image";
 import * as React from "react";
+import MobileNav from "./mobile-nav";
 
-// Import shadcn sheet components
-import {
-  Sheet,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-  SheetClose,
-} from "@/components/ui/sheet";
-import { Menu } from "lucide-react";
+export interface NavigationLink {
+  name: string;
+  href?: string;
+  children?: NavigationLink[];
+}
 
 export default function Navbar() {
+  // Convert DATA.nav.links to NavigationLink format
+  const navigationLinks: NavigationLink[] = DATA.nav.links.map((link) => {
+    if (link.type === "dropdown" && link.items) {
+      return {
+        name: link.label,
+        children: link.items.map((item) => ({
+          name: item.title,
+          href: item.url,
+        })),
+      };
+    } else {
+      return {
+        name: link.label,
+        href: link.url,
+      };
+    }
+  });
+
   return (
     <nav className="flex lg:flex-row flex-row items-center justify-between top-0 z-20 lg:px-28 px-10 py-3 fixed w-screen transition-all duration-300 ease-in-out bg-[#f8f8f7] h-auto">
       {/* Logo */}
@@ -91,94 +107,9 @@ export default function Navbar() {
         {DATA.nav.cta.text}
       </Link>
 
-      {/* Mobile Menu Button */}
-      <div className="lg:hidden order-2 flex items-center">
-        <Sheet>
-          <SheetTrigger asChild>
-            <button
-              aria-label="Open menu"
-              className="p-2 rounded-md border border-gray-200 bg-white shadow-sm"
-            >
-              <Menu className="w-6 h-6" />
-            </button>
-          </SheetTrigger>
-          <SheetContent side="left" className="w-72 p-0">
-            <SheetHeader className="p-4 border-b">
-              <SheetTitle>
-                <Link
-                  href="/"
-                  className="flex items-center gap-2"
-                  tabIndex={-1}
-                >
-                  <Image
-                    src={DATA.nav.logo}
-                    alt="logo"
-                    className="w-10 invert"
-                    width={40}
-                    height={40}
-                  />
-                  <span className="font-bold text-lg">Coding Collective</span>
-                </Link>
-              </SheetTitle>
-            </SheetHeader>
-            <nav className="flex flex-col gap-2 p-4">
-              {DATA.nav.links.map((link, i) =>
-                link.type === "dropdown" ? (
-                  <div key={i} className="mb-2">
-                    <div className="font-generalsans font-medium text-base flex items-center mb-1">
-                      {link.label}
-                    </div>
-                    <ul className="ml-2 flex flex-col gap-1">
-                      {link.items?.map((item, j) => (
-                        <li key={j}>
-                          <SheetClose asChild>
-                            <a
-                              href={item.url}
-                              className="flex items-center gap-3 p-2 rounded hover:bg-gray-100 transition"
-                            >
-                              <div
-                                className={`${item.iconBg} w-10 h-10 rounded flex justify-center items-center`}
-                              >
-                                {/* Icon placeholder */}
-                                <span className="text-lg">🌐</span>
-                              </div>
-                              <div>
-                                <h5 className="font-semibold">{item.title}</h5>
-                                <p className="font-generalsans font-medium text-xs">
-                                  {item.desc}
-                                </p>
-                              </div>
-                            </a>
-                          </SheetClose>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ) : (
-                  <SheetClose asChild key={i}>
-                    <a
-                      href={link.url}
-                      className="font-generalsans font-medium text-base p-2 rounded hover:bg-gray-100 transition block"
-                    >
-                      {link.label}
-                    </a>
-                  </SheetClose>
-                )
-              )}
-              <SheetClose asChild>
-                <Link
-                  href={DATA.nav.cta.url}
-                  className={cn(
-                    buttonVariants({ variant: "default", size: "lg" }),
-                    "bg-[#153147] mt-4 w-full justify-center"
-                  )}
-                >
-                  {DATA.nav.cta.text}
-                </Link>
-              </SheetClose>
-            </nav>
-          </SheetContent>
-        </Sheet>
+      {/* Mobile Navigation */}
+      <div className="lg:hidden order-2">
+        <MobileNav links={navigationLinks} />
       </div>
     </nav>
   );

@@ -29,10 +29,10 @@ export default function ServiceCta({ service }: { service: Service }) {
               {service.slugCtaDescription}
             </h6>
             <Link
-              href={`https://wa.me/890890890`}
+              href={`https://wa.me/6581181595`}
               target="_blank"
               className={cn(
-                buttonVariants({ variant: "default" }),
+                buttonVariants({ variant: "yellow" }),
                 "flex items-center self-start bg-yellow-500 text-black rounded-md py-2 px-4 font-medium font-generalsans shadow-custom-drop hover:scale-105 transition-all"
               )}
             >

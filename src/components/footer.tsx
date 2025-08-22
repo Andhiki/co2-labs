@@ -5,13 +5,13 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <footer className="bg-[#141516] text-white">
-      <Container>
+      <Container id="footer">
         <div className="lg:flex lg:justify-between">
           {/* Kiri */}
           <div className="flex flex-col justify-between">
-            <h3 className="text-2xl font-bold">{DATA.footer.title}</h3>
+            <h3 className="text-3xl font-bold">{DATA.footer.title}</h3>
             <div className="flex flex-col gap-5">
-              <h5 className="text-lg">{DATA.footer.description}</h5>
+              <h5 className="text-xl font-bold">{DATA.footer.description}</h5>
               <form className="flex ">
                 <input
                   type="email"
@@ -38,7 +38,10 @@ export default function Footer() {
                 {DATA.footer.content.services.title}
               </h6>
               {DATA.footer.content.services.links.map((link) => (
-                <li key={link.title} className="mb-2 list-disc list-inside">
+                <li
+                  key={link.title}
+                  className="list-disc list-inside text-custom-gray font-medium"
+                >
                   <Link
                     href={link.href}
                     className="hover:text-yellow-400 transition-colors"
@@ -55,7 +58,10 @@ export default function Footer() {
                 {DATA.footer.content.about.title}
               </h6>
               {DATA.footer.content.about.links.map((link) => (
-                <li key={link.title} className="mb-2 list-disc list-inside">
+                <li
+                  key={link.title}
+                  className="list-disc list-inside text-custom-gray font-medium"
+                >
                   <Link
                     href={link.href}
                     className="hover:text-yellow-400 transition-colors"
@@ -74,7 +80,7 @@ export default function Footer() {
               {DATA.footer.content.contact.links.map((link) => (
                 <li
                   key={link.title}
-                  className="mb-2 list-disc list-outside ml-4"
+                  className="list-disc list-outside ml-4 text-custom-gray font-medium"
                 >
                   <Link
                     href={link.href}
@@ -91,8 +97,10 @@ export default function Footer() {
 
         {/* Bottom */}
         <div className="flex sm:flex-row flex-col-reverse justify-between mt-10">
-          <span className="text-sm">{DATA.footer.copyright}</span>
-          <div className="flex gap-10 sm:mb-0 mb-5">
+          <span className="text-custom-gray font-medium">
+            {DATA.footer.copyright}
+          </span>
+          <div className="flex gap-10 sm:mb-0 mb-5 text-custom-gray font-medium">
             {DATA.footer.content.bottomLinks.map((link) => (
               <a
                 key={link.title}

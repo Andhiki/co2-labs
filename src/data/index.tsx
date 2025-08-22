@@ -3,11 +3,12 @@ export const DATA = {
     logo: "/icon.png",
     cta: {
       text: "Get Started Today!",
-      url: "#contact",
+      url: "https://wa.me/6581181595",
     },
     links: [
       {
         label: "Our Services",
+        href: "#service",
         type: "dropdown",
         items: [
           {
@@ -104,7 +105,7 @@ export const DATA = {
       "Harnessing the power of our Coding Collective to build solutions for your business needs.",
     button: {
       text: "Get a free consult",
-      url: "#contact",
+      url: "https://wa.me/6581181595",
     },
     image: "/home/heroimg.png",
     backdrop: "/home/backdrop.png",
@@ -391,21 +392,21 @@ export const DATA = {
     members: [
       {
         name: "Jay Chen",
-        image: "/images/john-doe.png",
+        image: "/home/profile1.jpeg",
         role: "CEO",
         description:
           "Jay began his career in the banking and finance sector, where he honed his skills and developed a deep understanding of the industry. Leveraging this foundation, he expanded into HR operations and outsourcing, successfully growing his businesses by delivering exceptional service to renowned international brands like Huawei, Coca-Cola, and GlaxoSmithKline. CO2 Labs provides a solutions based approach to champion human resource and outsourcing through strategic consultation and meticulously planned placements.",
       },
       {
         name: "Alune",
-        image: "/images/john-doe.png",
+        image: "/home/profile2.jpeg",
         role: "Development Project Manager",
         description:
           "With a background in IT software development, quality testing and web design, she brings a deep understanding of the technical and strategic aspects of project management. Known for her meticulous planning, effective communication, and ability to navigate challenges, she has consistently delivered high-quality software solutions on time and within budget. Alune excels at fostering collaboration across cross-functional teams, ensuring that projects align with client objectives and business goals. Her dedication to excellence and passion for innovation make her a driving force behind the success of every project she leads.",
       },
       {
         name: "Ron",
-        image: "/images/john-doe.png",
+        image: "/home/profile3.jpeg",
         role: "Business Development Lead",
         description:
           "With a strong background in business development for finance, logistics and real estate industries, Ron has successfully led initiatives that have expanded market reach and increased revenue for both emerging and established companies. Known for his ability to identify new opportunities and forge lasting relationships, Ron excels in creating tailored solutions that meet client needs and align with business goals through thoughtful solutioning.",
@@ -417,27 +418,27 @@ export const DATA = {
     projects: [
       {
         title: "AOTC Cosmetics",
-        image: "/images/aotc-cosmetics.png",
+        image: "/home/portfolio.png",
         link: "https://aotccosmetics.com",
       },
       {
         title: "Nosh kitchen Website",
-        image: "/images/nosh-kitchen.png",
+        image: "/home/portfolio-1.png",
         link: "https://noshkitchen.com",
       },
       {
         title: "Michelah Event Organizer Singapore",
-        image: "/images/michelah-event.png",
+        image: "/home/portfolio-2.png",
         link: "https://michelah.com.sg",
       },
       {
         title: "Joywaltzstudio Academy",
-        image: "/images/joywaltzstudio-academy.png",
+        image: "/home/portfolio-3.png",
         link: "https://joywaltzstudio.com/academy",
       },
       {
         title: "Octopay Payment",
-        image: "/images/octopay-payment.png",
+        image: "/home/portfolio-4.png",
         link: "https://octopay.com",
       },
     ],
@@ -448,17 +449,58 @@ export const DATA = {
       {
         type: "map",
         url: "https://maps.app.goo.gl/sXvWLYMD6nfN7pK3A",
-        icon: "/icons/map.svg", // bisa pakai inline SVG juga
+        icon: (
+          <svg
+            width="41"
+            height="40"
+            viewBox="0 0 41 40"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M26.3978 0.824707C25.8785 0.824707 25.3445 1.09594 24.9694 1.4549C21.9368 4.35872 21.0081 6.78705 22.1169 10.1135C19.5298 12.0965 17.8957 12.5831 14.6661 12.5831C10.251 12.5831 7.36832 13.1154 5.40685 15.0755V15.1366C3.5715 16.9712 3.5715 19.9087 5.40685 21.7417L10.8906 27.2681L1.54717 36.6074C0.782441 37.3711 0.725457 38.6538 1.49019 39.4176C2.25511 40.1833 3.54056 40.1833 4.30549 39.4176L13.6836 30.0372L19.1765 35.5029C21.012 37.3378 23.9503 37.3378 25.7859 35.5029H25.8472C27.8094 33.5426 28.3562 31.03 28.3562 26.2674C28.3562 23.2398 28.9776 21.1033 30.8589 18.8551C34.4797 19.9165 36.5863 18.9001 39.5555 15.9319C39.9227 15.5647 40.1062 15.0442 40.1062 14.525C40.1062 13.8363 39.9323 12.7805 39.4942 11.4669C38.7886 9.35169 37.5739 7.22356 35.6388 5.28951C33.7036 3.35566 31.5741 2.14149 29.4577 1.4363C28.1433 0.998414 27.087 0.824707 26.3978 0.824707Z"
+              fill="black"
+            ></path>
+          </svg>
+        ),
       },
       {
         type: "email",
         url: "mailto:info@co2labs.com",
-        icon: "/icons/mail.svg",
+        icon: (
+          <svg
+            width="41"
+            height="33"
+            viewBox="0 0 41 33"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8.65624 0.829102C4.67299 0.829102 1.55535 1.83567 1.00506 5.66421C0.828806 6.89013 1.21653 8.09648 2.10758 8.96794C2.55016 9.40073 3.01821 9.91577 3.63705 10.4367C5.19001 11.7468 7.16989 13.2195 9.02247 14.5374C14.12 18.1603 18.1444 20.4124 20.5277 20.4124C22.911 20.4124 26.9354 18.1603 32.0329 14.5374C33.8875 13.2195 35.8673 11.7449 37.4183 10.4367C38.0372 9.91577 38.5052 9.40269 38.9478 8.96794C39.8389 8.09648 40.2266 6.89013 40.0503 5.66421C39.5 1.83567 36.3824 0.829102 32.3992 0.829102H8.65624ZM0.944336 12.8846V24.3291C0.944336 28.655 4.45172 32.1624 8.77768 32.1624H32.2777C36.6037 32.1624 40.1111 28.655 40.1111 24.3291V12.8846C38.5052 14.4101 36.7114 15.9846 34.1753 17.7804C28.6215 21.7128 23.6336 24.3291 20.5277 24.3291C17.4218 24.3291 12.4339 21.7128 6.88006 17.7804C4.34206 15.9846 2.55017 14.4101 0.944336 12.8846Z"
+              fill="black"
+            ></path>
+          </svg>
+        ),
       },
       {
         type: "phone",
-        url: "#", // nanti bisa pakai tel:...
-        icon: "/icons/phone.svg",
+        url: "#",
+        icon: (
+          <svg
+            width="47"
+            height="47"
+            viewBox="0 0 47 47"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fillRule="evenodd"
+              clipRule="evenodd"
+              d="M5.53711 1.50107C6.05109 0.987852 6.66828 0.589732 7.34777 0.333087C8.02726 0.0764429 8.75354 -0.0328644 9.47847 0.012409C10.2034 0.0576823 10.9104 0.256503 11.5527 0.595694C12.195 0.934886 12.7578 1.4067 13.204 1.97988L18.4768 8.75375C19.4432 9.99632 19.784 11.6149 19.4021 13.1424L17.7953 19.5755C17.7128 19.9087 17.7176 20.2576 17.8092 20.5884C17.9007 20.9193 18.0761 21.2209 18.3182 21.4643L25.5356 28.6818C25.7793 28.9244 26.0814 29.1 26.4128 29.1916C26.7442 29.2832 27.0937 29.2877 27.4274 29.2046L33.8575 27.5978C34.6114 27.4104 35.398 27.3963 36.1581 27.5566C36.9182 27.7169 37.6321 28.0473 38.2462 28.5231L45.02 33.793C47.4552 35.6877 47.6785 39.2861 45.4989 41.4628L42.4615 44.5002C40.2877 46.6739 37.0389 47.6286 34.0103 46.5623C26.2573 43.838 19.2186 39.4 13.4184 33.5786C7.59739 27.7792 3.15935 20.7416 0.434668 12.9896C-0.628706 9.964 0.325981 6.71219 2.49973 4.53844L5.53711 1.50107Z"
+              fill="black"
+            ></path>
+          </svg>
+        ),
       },
     ],
     form: {

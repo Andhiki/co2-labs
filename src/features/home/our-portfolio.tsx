@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { DATA } from "@/data";
 import Container from "@/components/container";
+import Link from "next/link";
 
 export default function OurPortfolio() {
   return (
@@ -11,7 +12,7 @@ export default function OurPortfolio() {
 
       <div className="flex flex-wrap justify-center gap-4">
         {DATA.portfolio.projects.map((project) => (
-          <a
+          <Link
             key={project.title}
             href={project.link}
             target="_blank"
@@ -20,8 +21,7 @@ export default function OurPortfolio() {
           >
             <div className="relative aspect-square w-full overflow-clip rounded-lg">
               <Image
-                // src={project.image}
-                src="/placeholder.png"
+                src={project.image}
                 alt={project.title}
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -30,8 +30,8 @@ export default function OurPortfolio() {
                 className="object-cover transition-transform duration-300 ease-out group-hover:scale-105"
               />
             </div>
-            <h3 className="text-lg font-semibold">{project.title}</h3>
-          </a>
+            <h3 className="text-xl font-semibold">{project.title}</h3>
+          </Link>
         ))}
       </div>
     </Container>

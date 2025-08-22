@@ -10,6 +10,13 @@ const buttonVariants = cva(
       variant: {
         default:
           "bg-[#153147] text-[#F9F8F6] shadow-xs hover:bg-[#153147]/90 py-2 px-4 hover:scale-110 transition-all duration-300 hover:shadow-md",
+        yellow:
+          "bg-yellow text-black shadow-xs hover:bg-yellow/90 py-2 px-4 hover:scale-110 transition-all duration-300 hover:shadow-md",
+        accent:
+          "bg-gray-100 text-gray-900 hover:bg-gray-200 py-3 px-3 w-full justify-start text-left",
+        link: "bg-transparent text-gray-700 hover:text-gray-900 hover:underline p-0 h-auto",
+        ghost:
+          "bg-transparent text-gray-700 hover:bg-gray-100 hover:text-gray-900 py-1 px-2",
       },
       size: {
         default: "h-9 px-4 py-2 has-[>svg]:px-3",

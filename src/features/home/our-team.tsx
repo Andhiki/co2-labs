@@ -23,8 +23,7 @@ export default function OurTeam() {
             <div className="flex flex-col items-center">
               <div className="lg:-mt-24">
                 <Image
-                  // src={member.image}
-                  src="/placeholder.png"
+                  src={member.image}
                   alt={member.name}
                   width={192}
                   height={192}

@@ -49,6 +49,12 @@
   --custom-yellow-light: #fffde8;
   --custom-purple: #e865ff;
   --custom-purple-light: #fbf5fe;
+  --custom-gray: #888888;
+  --base: #ffffff;
+  --dark-300: #6b7280;
+  --dark-600: #374151;
+  --primary-500: #153147;
+  --bgbase: #ffffff;
 }
 
 .font-orbitron {
@@ -57,6 +63,36 @@
 
 .font-body {
   font-family: var(--font-body);
+}
+
+.font-generalsans {
+  font-family: var(--font-body);
+}
+
+/* Custom utility classes */
+.bg-base {
+  background-color: var(--base);
+}
+
+.text-dark-300 {
+  color: var(--dark-300);
+}
+
+.text-dark-600 {
+  color: var(--dark-600);
+}
+
+.bg-primary-500 {
+  background-color: var(--primary-500);
+}
+
+.text-bgbase {
+  color: var(--bgbase);
+}
+
+.shadow-custom-drop {
+  box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
 @theme inline {
@@ -104,6 +140,7 @@
   --color-custom-yellow-light: var(--custom-yellow-light);
   --color-custom-purple: var(--custom-purple);
   --color-custom-purple-light: var(--custom-purple-light);
+  --color-custom-gray: var(--custom-gray);
 }
 
 .dark {
