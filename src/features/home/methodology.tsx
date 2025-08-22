@@ -1,7 +1,6 @@
 "use client";
 
-import React, { useEffect } from "react";
-import AOS from "aos";
+import React, { useState } from "react";
 import Container from "@/components/container";
 import { cn } from "@/utils/cn";
 import { DATA } from "@/data";
@@ -37,20 +36,52 @@ const Card = (props: {
   list: string[];
 }) => {
   const animationDelay = props.idx * 200;
+  const [expanded, setExpanded] = useState(false);
+  const [isMobile, setIsMobile] = React.useState(false);
+
+  React.useEffect(() => {
+    const checkMobile = () => {
+      if (typeof window !== "undefined") {
+        setIsMobile(window.matchMedia("(max-width: 1023px)").matches);
+      }
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  const handleToggle = () => {
+    if (isMobile) setExpanded((prev) => !prev);
+  };
 
   return (
     <div
-      className={`group h-fit overflow-clip p-8 ${
-        props.idx % 2 === 0 ? "bg-[#EDEAE3]" : "bg-[#ADB8BA]"
-      }`}
+      className={cn(
+        "group h-fit overflow-clip p-8",
+        props.idx % 2 === 0 ? "bg-[#EDEAE3]" : "bg-[#ADB8BA]",
+        isMobile ? "cursor-pointer" : ""
+      )}
       data-aos="fade-up"
       data-aos-delay={animationDelay}
       data-aos-duration="800"
+      onClick={handleToggle}
+      tabIndex={0}
+      role="button"
+      aria-expanded={isMobile ? expanded : undefined}
     >
       <h1 className="text-3xl font-black">{props.title}</h1>
       <h2 className="text-xl font-medium">{props.subtitle}</h2>
 
-      <div className="max-h-0 space-y-2 overflow-hidden pt-4 font-medium transition-all duration-300 ease-out group-hover:max-h-64">
+      <div
+        className={cn(
+          "space-y-2 overflow-hidden pt-4 font-medium transition-all duration-300 ease-out",
+          isMobile
+            ? expanded
+              ? "max-h-64"
+              : "max-h-0"
+            : "max-h-0 group-hover:max-h-64"
+        )}
+      >
         {props.description}
         <ul className="list-disc pl-5 mt-5">
           {props.list.map((item) => (
@@ -61,7 +92,12 @@ const Card = (props: {
 
       <svg
         className={cn(
-          "transform transition-transform duration-300 ease-in-out group-hover:rotate-0 rotate-180 mx-auto mt-8",
+          "transform transition-transform duration-300 ease-in-out mx-auto mt-8",
+          isMobile
+            ? expanded
+              ? "rotate-0"
+              : "rotate-180"
+            : "group-hover:rotate-0 rotate-180",
           props.idx % 2 === 0 ? "text-muted-foreground" : "text-neutral-300"
         )}
         width="59"
