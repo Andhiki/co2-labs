@@ -35,13 +35,13 @@ export default function Navbar() {
         {DATA.nav.links.map((link, i) =>
           link.type === "dropdown" ? (
             <li key={i} className="relative group">
-              <button className="font-generalsans font-medium text-xl flex items-center">
+              <button className="font-medium text-xl flex items-center">
                 {link.label}
                 <i className="bx bx-chevron-down ml-2 transform transition-transform duration-300 ease-in-out group-hover:rotate-180"></i>
               </button>
               {/* Dropdown */}
-              <div className="absolute left-0 bg-white border-gray-200 border-[1px] shadow-custom-drop rounded-lg hidden opacity-0 group-hover:opacity-100 group-hover:block transition-all duration-300 ease-in-out">
-                <ul className="drop p-2">
+              <div className="absolute left-0 bg-white border-gray-200 border-[1px] rounded-lg hidden opacity-0 group-hover:opacity-100 group-hover:block transition-all duration-300 ease-in-out w-[825px] shadow-lg">
+                <ul className="drop p-2 grid grid-cols-2 gap-2">
                   {link.items?.map((item, j) => (
                     <li key={j}>
                       <a
@@ -51,12 +51,13 @@ export default function Navbar() {
                         <div
                           className={`${item.iconBg} w-16 h-16 rounded-md flex justify-center items-center`}
                         >
-                          {/* Icon placeholder – bisa pake svg sesuai item.icon */}
-                          <span className="text-xl">🌐</span>
+                          {item.icon}
                         </div>
                         <div>
-                          <h5>{item.title}</h5>
-                          <p className="font-generalsans font-medium text-xs w-60">
+                          <h5 className="font-semibold text-xl">
+                            {item.title}
+                          </h5>
+                          <p className="font-semibold text-xs w-60">
                             {item.desc}
                           </p>
                         </div>
