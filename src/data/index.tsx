@@ -608,7 +608,7 @@ export const DATA = {
       },
       bottomLinks: [
         { title: "FAQ", href: "/faq" },
-        { title: "Terms & Policy", href: "/terms-policy" },
+        { title: "Terms & Policy", href: "/termspolicy" },
       ],
     },
   },
